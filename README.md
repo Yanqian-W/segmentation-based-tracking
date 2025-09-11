@@ -35,7 +35,7 @@ The algorithm can be applied to videos with complex backgrounds (e.g., grassy su
 
 After processing, the program outputs the processed video, FPS information, and optionally shows the tracked objects on screen.
 
-Note: This README provides a high-level overview and usage instructions. For detailed explanations of individual components, evaluations, and demo test results, see the [evaluation report](Evaluation.md).
+Note: This README provides a high-level overview and usage instructions. For detailed explanations of individual components, evaluations, and demo test results, see the [evaluation report](docs/evaluation.md).
 
 
 
