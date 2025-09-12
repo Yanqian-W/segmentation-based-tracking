@@ -34,11 +34,9 @@ Evaluation:
 - **Near real-time processing speed**: Processed 1837 frames in 61.11 sec; FPS: 30.06. (VISUALIZE=SAVE_VIDEO=False)
 - High accuracy and efficiency maintained across frames.
 
-<video width="600" controls>
-  <source src="../output/dynamic_result_compressed.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
+<a href="../output/dynamic_result_compressed.mp4">
+  <img src="../output/dynamic_cover.png" width="600">
+</a>
 
 
 ## Background Agnostic
@@ -47,7 +45,9 @@ To generalize beyond specific textures and object colors:
 - **Background subtraction (MOG2) is used to extract moving regions:** If segmentation is based solely on color space, different colored parts of the same object will be identified as separate objects. However, temporal and motion information can be leveraged to enhance edge detection. The key idea is that while a single frame's color may not be able to distinguish between the target and background, motion consistency across frames provides stronger cues, correcting errors in challenging cases.
 - **Frame skipping (FRAME_SKIP)** allows processing every n frames, balancing speed and accuracy for near real-time results. The video below is the result of processing every 2 frames.
 
-[![dynamic video](../output/dynamic_hard_cover.png)](../output/dynamic_hard_result_compressed.mp4)
+<a href="../output/dynamic_hard_result_compressed.mp4">
+  <img src="../output/dynamic_hard_cover.png" width="600">
+</a>
 
 Evaluation:
 - Efficiency: Processed 1841 frames in 72.61 sec; FPS: 25.35 (FRAME_SKIP=2, VISUALIZE=SAVE_VIDEO=False).
@@ -104,7 +104,9 @@ Once $Z$ is estimated, the full 3D coordinates of the circle center are obtained
 
 This allows the algorithm to display $(X, Y, Z)$ relative to the camera frame.
 
-[![dynamic video](../output/dynamic_hard_3d_cover.png)](../output/dynamic_hard_result_3d_compressed.mp4)
+<a href="../output/dynamic_hard_result_3d_compressed.mp4">
+  <img src="../output/dynamic_hard_3d_cover.png" width="600">
+</a>
 
 
 
