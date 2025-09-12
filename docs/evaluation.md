@@ -34,10 +34,9 @@ Evaluation:
 - **Near real-time processing speed**: Processed 1837 frames in 61.11 sec; FPS: 30.06. (VISUALIZE=SAVE_VIDEO=False)
 - High accuracy and efficiency maintained across frames.
 
-<a href="../output/dynamic_result_small.mp4">
-  <img src="../output/dynamic_cover.png" width="600">
+<a href="https://drive.google.com/file/d/1yo2m_0WELLrqGWh4UJtHbEzV7Co0F__C/view?usp=sharing">
+  <img src="../results/dynamic_cover.png" width="600">
 </a>
-
 
 ## Background Agnostic
 
@@ -45,8 +44,8 @@ To generalize beyond specific textures and object colors:
 - **Background subtraction (MOG2) is used to extract moving regions:** If segmentation is based solely on color space, different colored parts of the same object will be identified as separate objects. However, temporal and motion information can be leveraged to enhance edge detection. The key idea is that while a single frame's color may not be able to distinguish between the target and background, motion consistency across frames provides stronger cues, correcting errors in challenging cases.
 - **Frame skipping (FRAME_SKIP)** allows processing every n frames, balancing speed and accuracy for near real-time results. The video below is the result of processing every 2 frames.
 
-<a href="../output/dynamic_hard_result_compressed.mp4">
-  <img src="../output/dynamic_hard_cover.png" width="600">
+<a href="https://drive.google.com/file/d/1_1VwynMRgpADTmNHrimYJuYI7qBjjoru/view?usp=sharing">
+  <img src="../results/dynamic_hard_cover.png" width="600">
 </a>
 
 Evaluation:
@@ -104,8 +103,8 @@ Once $Z$ is estimated, the full 3D coordinates of the circle center are obtained
 
 This allows the algorithm to display $(X, Y, Z)$ relative to the camera frame.
 
-<a href="../output/dynamic_hard_result_3d_compressed.mp4">
-  <img src="../output/dynamic_hard_3d_cover.png" width="600">
+<a href="https://drive.google.com/file/d/1048mkwSesq4Y__Vej0LqmFjCY8DiqZYu/view?usp=sharing">
+  <img src="../results/dynamic_hard_3d_cover.png" width="600">
 </a>
 
 
