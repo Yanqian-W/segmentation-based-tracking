@@ -34,7 +34,9 @@ Evaluation:
 - **Near real-time processing speed**: Processed 1837 frames in 61.11 sec; FPS: 30.06. (VISUALIZE=SAVE_VIDEO=False)
 - High accuracy and efficiency maintained across frames.
 
-[Dynamic video result](../output/dynamic_result_compressed.mp4)
+<a href="../output/dynamic_result_small.mp4">
+  <img src="../output/dynamic_cover.png" width="600">
+</a>
 
 
 ## Background Agnostic
@@ -105,7 +107,6 @@ This allows the algorithm to display $(X, Y, Z)$ relative to the camera frame.
 <a href="../output/dynamic_hard_result_3d_compressed.mp4">
   <img src="../output/dynamic_hard_3d_cover.png" width="600">
 </a>
-
 
 
 ## Potential improvements
