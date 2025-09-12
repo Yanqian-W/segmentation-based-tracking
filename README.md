@@ -24,7 +24,7 @@ The algorithm can be applied to videos with complex backgrounds (e.g., grassy su
   ```
 3. Tunable parameters for each component:
   - PreProcessing: `method` (options: gaussian, bilateral, median, opening, closing, open_close), `kernel_size`
-  - Background Subtractor (MOG2)**: `history`, `varThreshold`, `detectShadows`
+  - Background Subtractor (MOG2): `history`, `varThreshold`, `detectShadows`
   - Segmentation: `method` (options: threshold, canny, kmeans)
   - PostProcessing: `kernel_open`, `kernel_close`, `area_ratio` (for contour filtering)
 4. Optional parameters:

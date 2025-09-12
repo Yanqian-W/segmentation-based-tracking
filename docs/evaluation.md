@@ -8,7 +8,7 @@ The algorithm follows the pipeline:
 
 - **Convert frames to different color spaces (GRAY and HSV):** A single color space is often insufficient to detect all targets. Some spaces are sensitive to certain objects while ignoring others. Therefore, fusing multiple color spaces enhances detection capabilities.
 
-- **Apply preprocessing to enhance object features:** Since the background is noisy, applying segmentation directly would misclassify background gaps (grass) as foreground. Morphological operations (opening and closing) are applied to remove small noise and fill small holes.
+- **Apply preprocessing to enhance object features:** Since the background is noisy, applying segmentation directly would misclassify background gaps (grass) as foreground. Morphological operations (opening and closing) are applied to remove small noise and fill holes.
 
 - **Apply segmentation methods to detect object regions:** Both Otsu thresholding and Canny edge detection offer near real-time detection performance. Given that the images in this task have distinct colors, thresholding is more suitable. K-means clustering was also tested but performed poorly in both accuracy and speed. Results from thresholding across different color spaces are fused using the OR operation.
 
@@ -26,7 +26,7 @@ Results on static images show good alignment between segmentation output and tru
 To extend the algorithm to video, each frame is processed in a loop:
 
 - **Frame-wise segmentation and tracking** ensures that all objects are detected across time.
-- **Post-processing removes large false detections:** In some frames, large noisy patches are mistakenly classified as objects. A large-kernel opening operation combined with an area ratio filter removes small irrelevant components, followed by a smaller-kernel closing to fill in gaps.
+- **Post-processing removes large false detections:** In some frames, large noisy patches are misclassified as objects. A large-kernel opening operation combined with an area ratio filter removes small irrelevant components, followed by a smaller-kernel closing to fill in gaps.
 - Display or save video results, depending on requirements.
 - Measure processing time and FPS for efficiency analysis.
 
@@ -34,9 +34,7 @@ Evaluation:
 - **Near real-time processing speed**: Processed 1837 frames in 61.11 sec; FPS: 30.06. (VISUALIZE=SAVE_VIDEO=False)
 - High accuracy and efficiency maintained across frames.
 
-<video src="../output/dynamic_result_compressed.mp4" controls width="600">
-  Your browser does not support the video tag.
-</video>
+[![dynamic video](../output/dynamic_cover.png)](../output/dynamic_result_compressed.mp4)
 
 
 
@@ -46,9 +44,7 @@ To generalize beyond specific textures and object colors:
 - **Background subtraction (MOG2) is used to extract moving regions:** If segmentation is based solely on color space, different colored parts of the same object will be identified as separate objects. However, temporal and motion information can be leveraged to enhance edge detection. The key idea is that while a single frame's color may not be able to distinguish between the target and background, motion consistency across frames provides stronger cues, correcting errors in challenging cases.
 - **Frame skipping (FRAME_SKIP)** allows processing every n frames, balancing speed and accuracy for near real-time results. The video below is the result of processing every 2 frames.
 
-<video src="../output/dynamic_hard_result_compressed.mp4" controls width="600">
-  Your browser does not support the video tag.
-</video>
+[![dynamic video](../output/dynamic_hard_cover.png)](../output/dynamic_hard_result_compressed.mp4)
 
 Evaluation:
 - Efficiency: Processed 1841 frames in 72.61 sec; FPS: 25.35 (FRAME_SKIP=2, VISUALIZE=SAVE_VIDEO=False).
@@ -105,9 +101,7 @@ Once $Z$ is estimated, the full 3D coordinates of the circle center are obtained
 
 This allows the algorithm to display $(X, Y, Z)$ relative to the camera frame.
 
-<video src="../output/dynamic_hard_result_3d_compressed.mp4" controls width="600">
-  Your browser does not support the video tag.
-</video>
+[![dynamic video](../output/dynamic_hard_3d_cover.png)](../output/dynamic_hard_result_3d_compressed.mp4)
 
 
 
@@ -115,6 +109,7 @@ This allows the algorithm to display $(X, Y, Z)$ relative to the camera frame.
 
 To further enhance accuracy and robustness:  
  
-- **Adaptive segmentation**: Use learning-based methods (e.g., lightweight deel learning models) for improved generalization.  
-- **Robust tracking**: Incorporate Kalman filters to stabilize trajectories.
+- **Adaptive segmentation**: Use learning-based segmentation methods (e.g., lightweight deel learning models) for improved generalization.  
+- **Robust tracking**: Combines the Kalman filter for motion prediction with the Hungarian algorithm for optimal assignment of detections to predicted tracks. This approach enhances tracking robustness by maintaining consistent object trajectories across frames, preventing two intersecting objects from being identified as one.
+- **Re-identification**: Enhances the tracker’s robustness to occlusion by incorporating feature-based ReID techniques. This module leverages appearance cues such as color distributions and object shape to reassign correct IDs after tracking failures.
 - **Shape priors**: Apply geometric constraints (e.g. known pentagons and trapezoids) to improve detection accuracy.
