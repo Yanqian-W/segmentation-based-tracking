@@ -34,9 +34,7 @@ Evaluation:
 - **Near real-time processing speed**: Processed 1837 frames in 61.11 sec; FPS: 30.06. (VISUALIZE=SAVE_VIDEO=False)
 - High accuracy and efficiency maintained across frames.
 
-<a href="../output/dynamic_result_compressed.mp4">
-  <img src="../output/dynamic_cover.png" width="600">
-</a>
+[Dynamic video result](../output/dynamic_result_compressed.mp4)
 
 
 ## Background Agnostic
