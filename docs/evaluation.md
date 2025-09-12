@@ -34,7 +34,10 @@ Evaluation:
 - **Near real-time processing speed**: Processed 1837 frames in 61.11 sec; FPS: 30.06. (VISUALIZE=SAVE_VIDEO=False)
 - High accuracy and efficiency maintained across frames.
 
-[![dynamic video](../output/dynamic_cover.png)](../output/dynamic_result_compressed.mp4)
+<video width="600" controls>
+  <source src="../output/dynamic_result_compressed.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
 
