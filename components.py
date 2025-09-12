@@ -165,7 +165,7 @@ class Visualization:
                 cy_img = int(M["m01"] / M["m00"])
                 cv2.circle(result, (cx_img, cy_img), 4, (255, 255, 255), -1)
 
-                # === Estimate object size in pixels ===
+                # Estimate object size in pixels
                 (x, y), r_px = cv2.minEnclosingCircle(cnt)
                 if r_px > 1:  # avoid division by zero
                     # Depth estimation

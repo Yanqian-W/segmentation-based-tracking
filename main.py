@@ -6,8 +6,8 @@ from components import ColorSpace, PreProcessing, Segmentation, \
 
 INPUT_VIDEO_PATH = "trace_objects_3d/resources/PennAir 2024 App Dynamic Hard.mp4"
 OUTPUT_VIDEO_PATH = "trace_objects_3d/output/dynamic_hard_result_3d.mp4"
-VISUALIZE = False
-SAVE_VIDEO = True
+VISUALIZE = True
+SAVE_VIDEO = False
 FRAME_SKIP = 2
 
 # Video reader

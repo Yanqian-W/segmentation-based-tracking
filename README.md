@@ -32,6 +32,7 @@ The algorithm can be applied to videos with complex backgrounds (e.g., grassy su
   - `SAVE_VIDEO=True` to save the output video in the target OUTPUT_VIDEO_PATH.
   - `FRAME_SKIP` controls the frame interval for processing, 1 means frame-by-frame processing. 
 5. Run the main program.
+6. Press 'q' to quit during the running process.
 
 After processing, the program outputs the processed video, FPS information, and optionally shows the tracked objects on screen.
 
