@@ -17,7 +17,7 @@ The algorithm follows the pipeline:
 
 Results on static images show good alignment between segmentation output and true outlines, confirming high accuracy.
 
-<img src="../output/static_result.png" width="600">
+<img src="../results/static_result.png" width="600">
 
 
 
